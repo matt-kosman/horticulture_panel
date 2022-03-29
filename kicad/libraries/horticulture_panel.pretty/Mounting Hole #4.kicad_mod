@@ -1,0 +1,14 @@
+(footprint "Mounting Hole #4" (version 20211014) (generator pcbnew)
+  (layer "F.Cu")
+  (tedit 6216928B)
+  (attr through_hole)
+  (fp_text reference "REF**" (at 3.1242 3.7338 unlocked) (layer "F.SilkS") hide
+    (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp f23e8b3a-5f6c-4f47-80fd-cd9ab0b5f117)
+  )
+  (fp_text value "Mounting Hole #4" (at 0 1 unlocked) (layer "F.Fab") hide
+    (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp 5e313539-121d-4f2d-8a9d-591eaf18c491)
+  )
+  (pad "1" thru_hole circle (at 0 0) (size 5.5 5.5) (drill 2.9) (layers *.Cu *.Mask) (tstamp b5f90f06-5ddc-4396-9c60-deb1782588ff))
+)
