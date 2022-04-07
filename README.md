@@ -31,7 +31,7 @@ Heat is a key consideration. A simple estimate - considering the total power del
 | Far Red   | 1.8 V                   | 0.63 W   | 0.35 W       | 0.28 W | 4        |
 | Daylight  | 3.2 V                   | 1.12 W   | 0.20 W est.  | 0.92 W | 4        |
 
-This is the extent of the formal thermal analysis. However, heat dissipation was a key part of the PCB design. Vias were placed underneath the LED and driver thermal pads, in addition to a grid of vias in the area near the LEDs and drivers. The rear side of the PCB has no components and is almost entirely ground plane. This both promotes heat transfer to the heat sink and minimizes the risk of shorts to ground. The four traces that do traverse the bottom side contain the low-energy PWM signals. There are a number of mounting holes near the LEDs and drivers to provide contact force to the heatsink.
+This is the extent of the formal thermal analysis. However, heat dissipation was a key part of the PCB design. Vias were placed underneath the LED and driver thermal pads, in addition to a grid of vias in the area near the LEDs and drivers. The rear side of the PCB has no components and is almost entirely ground plane. This both promotes heat transfer to the heat sink and minimizes the risk of shorts to ground. The four traces that do traverse the bottom side contain the low-energy PWM signals. There are a number of mounting holes near the LEDs and drivers to attach a heatsink.
 
 <p align="center"><img width="70%" src="kicad/images/horticulture_panel_revA_brd_rear.png"></br><b>PCB rear showing ground plane, thermal vias, mounting holes, and PWM trace traversal</b></p>
 
@@ -42,7 +42,7 @@ While the LED drivers have an adjustable current output, PWM control preserves t
 
 This design uses four Analog Devices LTC6992-1 voltage-controlled pulse width modulators to convert analog outputs from four corresponding potentiometers into the required control signals. A convenient [online tool](http://beta-tools.analog.com/timerblox/LTC6992) simplifies the design of LTC6992 circuits. The selected resistors produce an operating frequency of approximately 220Hz, which should exceed the [flicker fusion threshold](https://en.wikipedia.org/wiki/Flicker_fusion_threshold) in most cases and approximates the 244Hz example in the LED driver datasheet.
 
-Despite the possible reductions in size and cost, I decided not to use a microcontroller for PWM control. Primarily, I wanted to avoid software as part of this project. However, the apparent benefits are somewhat offset by the I/O requirements (minimum 4 analog input and 4 PWM output), additional power draw on the 5V supply, and need for programming headers.
+Despite the possible reductions in size and cost, I decided not to use a microcontroller for PWM control. Primarily, I wanted to avoid software as part of this project. However, the apparent benefits of a microcontroller are also somewhat offset by the I/O requirements (minimum 4 analog input and 4 PWM output), additional power draw on the 5V supply, and need for programming headers.
 
 <p align="center"><img width="70%" src="kicad/images/horticulture_panel_revA_sch_pwm.png"></br><b>control circuit</b></p>
 
@@ -67,7 +67,7 @@ This is a challenging assembly, but it is designed for hand soldering with the r
 
 I achieved a successful result soldering the LEDs using a [Miniware MHP30](http://www.miniware.com.cn/product/mhp30-mini-hot-plate-preheater/) to locally preheat to 150°C, manually applying solder paste, then soldering each joint for 15 seconds at 300°C with an iron.
 
-The thermal pad of the LED drivers does not extend to the edge of the package like a typical TO263-7. While I designed enough extra pad area to hand solder the thermal pad using a similar process to the LEDs, I decided to reflow with the hot plate.  
+The thermal pad of the LED drivers does not extend to the edge of the package like a typical TO263-7. While I designed enough extra pad area to hand solder the thermal pad using a similar process to the LEDs, I decided to reflow with the hot plate and also achieved a successful result.
 
 <p align="center"><img width="70%" src="images/horticulture_panel_revA_populated_pcb.jpg"></br><b>populated PCB</b></p>
 
@@ -75,7 +75,11 @@ The remaining components are standard surface mount and can be soldered accordin
 
 # performance
 
-Qualitatively, the lights turn on, are very bright, and change intensity as expected. My USB PD wattmeter shows 17W, which aligns reasonably well with the 14W predicted and is easily explained by higher than typical forward voltages in some of the LEDs.
+Qualitatively, the lights turn on, are very bright, and change intensity as expected.
+
+The linear potentiometers are usable, if compact, and provide passive visual feedback about their positions even with the light off. While the Bluetooth and app-based control of the Würth Elektronik kit is perhaps better suited to demonstrate the extent of possible horticultural applications, I find the manual interface to be more direct and useful for my occasional adjustments. 
+
+My USB PD wattmeter shows 17W, which aligns reasonably well with the 14W predicted and is easily explained by higher than typical forward voltages in some of the LEDs.
 
 <p align="center"><img width="70%" src="images/horticulture_panel_revA_thermal_test.jpg"></br><b>thermal checkout showing steady state temperature with all lights at 100%</b></p>
 
