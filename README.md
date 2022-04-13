@@ -16,7 +16,7 @@ This design uses the same type and quantity of LEDs as the Würth Elektronik pan
 
 <p align="center"><img width="70%" src="kicad/images/horticulture_panel_revA_sch_led_driver.png"></br><b>two of the six <i>hyper red</i> LEDs and their associated driver</b></p>
 
-The LEDs are arranged in a grid with 12.5mm spacing to fit the selected Ledil C16597 lens. The footprints for the LEDs and drivers were expended to allow hand soldering.
+The LEDs are arranged in a grid with 12.5mm spacing to fit the selected Ledil C16597 lens. The footprints for the LEDs and drivers were expanded to allow hand soldering.
 
 <p align="center"><img width="40%" src="kicad/images/horticultore_panel_revA_brd_led_array.png"></br><b>LED array with expanded footprints and lens mounting holes</b></p>
 
@@ -46,7 +46,7 @@ Despite the possible reductions in size and cost, I decided not to use a microco
 
 <p align="center"><img width="70%" src="kicad/images/horticulture_panel_revA_sch_pwm.png"></br><b>control circuit</b></p>
 
-Sourcing a suitable surface mount potentiometer was surprisingly difficult. The resulting linear potentiometer provides clear visual feedback when the panel is unpowered. There are four copies of the same circuit, aligned for east hand soldering, with compromises as required to the recommended layout.
+Sourcing a suitable surface mount potentiometer was surprisingly difficult. The resulting linear potentiometer provides clear visual feedback when the panel is unpowered. There are four copies of the same circuit, aligned for easy hand soldering, with compromises as required to the recommended layout.
 
 <p align="center"><img width="60%" src="kicad/images/horticulture_panel_revA_brd_control.png"></br><b>layout of qty(4) control circuits</b></p>
 
@@ -77,13 +77,13 @@ The remaining components are standard surface mount and can be soldered accordin
 
 Qualitatively, the lights turn on, are very bright, and change intensity as expected.
 
-The linear potentiometers are usable, if compact, and provide passive visual feedback about their positions even with the light off. While the Bluetooth and app-based control of the Würth Elektronik kit is perhaps better suited to demonstrate the extent of possible horticultural applications, I find the manual interface to be more direct and useful for my occasional adjustments. 
+The linear potentiometers are usable, if compact, and provide passive visual feedback about their positions even with the light off. While the Bluetooth and app-based control of the Würth Elektronik kit is perhaps better suited to demonstrate the extent of possible horticultural applications, I find the manual interface to be more direct and useful for my occasional adjustments.
 
 My USB PD wattmeter shows 17W, which aligns reasonably well with the 14W predicted and is easily explained by higher than typical forward voltages in some of the LEDs.
 
 <p align="center"><img width="70%" src="images/horticulture_panel_revA_thermal_test.jpg"></br><b>thermal checkout showing steady state temperature with all lights at 100%</b></p>
 
-The heatsink is capable is maintaining 80°C steady state in a 20°C room without airflow and with all lights at 100% power. In practice, to achieve the correct mix of wavelengths for each growth phase, not all of the lights will be active or at 100%; so the practical working temperatures will be lower. For comparison, the LED bulbs I use for home lighting consume 6W and reach a temperature of 65°C, which suggests this is a reasonable result. Your requirements will vary and will inform the design of your heatsink and mounting solutions.
+The heatsink is capable of maintaining 80°C steady state in a 20°C room without airflow and with all lights at 100% power. In practice, to achieve the correct mix of wavelengths for each growth phase, not all of the lights will be active or at 100%; so the practical working temperatures will be lower. For comparison, the LED bulbs I use for home lighting consume 6W and reach a temperature of 65°C, which suggests this is a reasonable result. Your requirements will vary and will inform the design of your heatsink and mounting solutions.
 
 Regarding plant growth, it's too soon to tell.
 
